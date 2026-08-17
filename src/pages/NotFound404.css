@@ -1,0 +1,25 @@
+body {
+  text-align: center;
+  min-height: 100vh;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.t404 {
+  font-size: 150px;
+  font-weight: 600;
+}
+
+.text {
+  color: #084f2d;
+  font-weight: 600;
+  font-size: 30px;
+}
