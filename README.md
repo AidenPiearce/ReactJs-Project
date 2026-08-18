@@ -111,7 +111,7 @@ npm run lint
 
 The `gh-pages` branch contains the production build.
 
-**Live site:** https://SpotifyAsoma.github.io/ReactJs-Project/
+**Live site:** https://AidenPiearce.github.io/ReactJs-Project/
 
 ### Manual Deploy
 ```bash
