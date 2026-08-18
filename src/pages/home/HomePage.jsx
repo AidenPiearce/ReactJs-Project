@@ -30,7 +30,7 @@ export function HomePage({ cart, loadCart }) {
   return (
     <>
       <title>Aiden's Ecommerce Project</title>
-      <link rel="icon" type="image/svg+xml" href="./Local/home-favicon.png" />
+      <link rel="icon" type="image/svg+xml" href="/Local/home-favicon.png" />
 
       <Header cart={cart} />
 

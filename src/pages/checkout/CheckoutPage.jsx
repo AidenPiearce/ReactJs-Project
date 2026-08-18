@@ -36,7 +36,7 @@ export function CheckoutPage({ cart, loadCart }) {
   return (
     <>
       <title>Checkout</title>
-      <link rel="icon" type="image/svg+xml" href="./Local/cart-favicon.png" />
+      <link rel="icon" type="image/svg+xml" href="/Local/cart-favicon.png" />
       <CheckoutHeader paymentSummary={paymentSummary} />
       <div className="checkout-page">
         <div className="page-title">Review your order</div>

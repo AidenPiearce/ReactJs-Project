@@ -11,7 +11,7 @@ export function OrdersPage({ cart, loadCart }) {
 
   useEffect(() => {
     async function call() {
-      const response = await axios.get("api/orders?expand=products");
+      const response = await axios.get("/api/orders?expand=products");
 
       setOrders(response.data);
     }
@@ -21,7 +21,7 @@ export function OrdersPage({ cart, loadCart }) {
   return (
     <>
       <title>Orders</title>
-      <link rel="icon" type="image/svg+xml" href="./Local/orders-favicon.png" />
+      <link rel="icon" type="image/svg+xml" href="/Local/orders-favicon.png" />
       <Header cart={cart} />
 
       <div className="orders-page">

@@ -1,7 +1,6 @@
-import { it, expect, describe, vi, beforeEach } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { it, describe, vi, beforeEach } from 'vitest';
+import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
-import userEvent from '@testing-library/user-event';
 import axios from 'axios';
 import { HomePage } from './HomePage';
 
@@ -20,7 +19,7 @@ describe('HomePage component', () => {
           data: [{
 
             id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
-            image: "images/products/athletic-cotton-socks-6-pairs.jpg",
+            image: "/images/products/athletic-cotton-socks-6-pairs.jpg",
             name: "Black and Gray Athletic Cotton Socks - 6 Pairs",
             rating: {
               stars: 4.5,
@@ -31,7 +30,7 @@ describe('HomePage component', () => {
           },
           {
             id: "15b6fc6f-327a-4ec4-896f-486349e85a3d",
-            image: "images/products/intermediate-composite-basketball.jpg",
+            image: "/images/products/intermediate-composite-basketball.jpg",
             name: "Intermediate Size Basketball",
             rating: {
               stars: 4,

@@ -21,9 +21,9 @@ export function Header({ cart }) {
       <div className="header">
         <div className="left-section">
           <NavLink to="/" className="header-link">
-            <img className="logo" src="Local/logo-white.png" />
-            <img className="mobile-logo" src="Local/mobile-logo-white.png" />
-          </NavLink>
+                      <img className="logo" src="/Local/logo-white.png" />
+                      <img className="mobile-logo" src="/Local/mobile-logo-white.png" />
+                    </NavLink>
         </div>
 
         <div className="middle-section">
@@ -46,7 +46,7 @@ export function Header({ cart }) {
             }}
 
           >
-            <img className="search-icon" src="images/icons/search-icon.png" />
+            <img className="search-icon" src="/images/icons/search-icon.png" />
           </button>
         </div>
 
@@ -56,7 +56,7 @@ export function Header({ cart }) {
           </NavLink>
 
           <NavLink className="cart-link header-link" to="/checkout">
-            <img className="cart-icon" src="images/icons/cart-icon.png" />
+            <img className="cart-icon" src="/images/icons/cart-icon.png" />
             <div className="cart-quantity">{totalQuantity}</div>
             <div className="cart-text">Cart</div>
           </NavLink>

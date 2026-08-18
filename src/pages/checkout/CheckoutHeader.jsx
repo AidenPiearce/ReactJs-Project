@@ -8,9 +8,9 @@ export function CheckoutHeader({ paymentSummary }) {
         <div className="header-content">
           <div className="checkout-header-left-section">
             <Link to="/">
-              <img className="logo" src="Local/logo.png" />
-              <img className="mobile-logo" src="Local/mobile-logo.png" />
-            </Link>
+                          <img className="logo" src="/Local/logo.png" />
+                          <img className="mobile-logo" src="/Local/mobile-logo.png" />
+                        </Link>
           </div>
 
           <div className="checkout-header-middle-section">
@@ -22,7 +22,7 @@ export function CheckoutHeader({ paymentSummary }) {
           </div>
 
           <div className="checkout-header-right-section">
-            <img src="images/icons/checkout-lock-icon.png" />
+            <img src="/images/icons/checkout-lock-icon.png" />
           </div>
         </div>
       </div>

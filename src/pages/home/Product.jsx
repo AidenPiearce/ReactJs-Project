@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { formatMoney } from "../../utils/money";
 
 
@@ -45,7 +45,7 @@ export function Product({ product, loadCart }) {
         <img
           data-testid="rating-image"
           className="product-rating-stars"
-          src={`images/ratings/rating-${product.rating.stars * 10}.png`}
+          src={`/images/ratings/rating-${product.rating.stars * 10}.png`}
         />
         <div className="product-rating-count link-primary">
           {product.rating.count}
@@ -81,7 +81,7 @@ export function Product({ product, loadCart }) {
           transition: 'opacity 0.15s ease, transform 0.15s ease',
         }}
       >
-        <img src="images/icons/checkmark.png"
+        <img src="/images/icons/checkmark.png"
 
         />
         Added
