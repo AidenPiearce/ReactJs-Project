@@ -5,21 +5,18 @@ import { CheckoutPage } from "./pages/checkout/CheckoutPage";
 import { OrdersPage } from "./pages/OrdersPage";
 import { TrackingPage } from "./pages/TrackingPage";
 import { NotFound404 } from "./pages/NotFound404";
-import axios from "axios";
+import { cartApi } from "./services/api";
 import { useEffect, useState } from "react";
 
 function App() {
   const [cart, setCart] = useState([]);
 
   const loadCart = async () => {
-    const response = await axios.get("/api/cart-items?expand=product");
-    setCart(response.data);
+    const response = await cartApi.get(true);
+    setCart(response);
   };
 
-  window.axios = axios;
-
   useEffect(() => {
-
     loadCart();
   }, []);
 

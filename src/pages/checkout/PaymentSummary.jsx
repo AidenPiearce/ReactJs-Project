@@ -1,18 +1,15 @@
-
 import { useNavigate } from "react-router";
-import axios from "axios";
 import { formatMoney } from "../../utils/money";
+import { ordersApi } from "../../services/api";
 
 export function PaymentSummary({ paymentSummary, loadCart }) {
   const navigate = useNavigate();
 
   const createOrder = async () => {
-    await axios.post(`/api/orders`);
+    await ordersApi.create();
     await loadCart();
     navigate('/orders');
-
   };
-
 
   return (
     <div className="payment-summary">
@@ -20,23 +17,23 @@ export function PaymentSummary({ paymentSummary, loadCart }) {
       {paymentSummary && (
         <>
           <div className="payment-summary-row">
-            <div>Items ({paymentSummary.totalItems}):</div>
+            <div>Items ({paymentSummary.itemCount}):</div>
             <div className="payment-summary-money">
-              {formatMoney(paymentSummary.productCostCents)}
+              {formatMoney(paymentSummary.subtotalCents)}
             </div>
           </div>
 
           <div className="payment-summary-row">
-            <div>Shipping &amp; handling:</div>
+            <div>Shipping & handling:</div>
             <div className="payment-summary-money">
-              {formatMoney(paymentSummary.shippingCostCents)}
+              {formatMoney(paymentSummary.shippingCents)}
             </div>
           </div>
 
           <div className="payment-summary-row subtotal-row">
             <div>Total before tax:</div>
             <div className="payment-summary-money">
-              {formatMoney(paymentSummary.totalCostBeforeTaxCents)}
+              {formatMoney(paymentSummary.subtotalCents + paymentSummary.shippingCents)}
             </div>
           </div>
 
@@ -50,7 +47,7 @@ export function PaymentSummary({ paymentSummary, loadCart }) {
           <div className="payment-summary-row total-row">
             <div>Order total:</div>
             <div className="payment-summary-money">
-              {formatMoney(paymentSummary.totalCostCents)}
+              {formatMoney(paymentSummary.totalCents)}
             </div>
           </div>
 

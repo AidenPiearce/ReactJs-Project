@@ -2,14 +2,12 @@ import dayjs from "dayjs";
 import { Fragment } from "react";
 import { Link } from "react-router";
 import { OrdersHeader } from "./OrdersHeader";
-import axios from "axios"
+import { cartApi } from "../services/api";
 
 export function OrdersGrid({ orders, loadCart }) {
   return (
     <div className="orders-grid">
       {orders.map((order) => {
-
-
 
         return (
           <div key={order.id} className="order-container">
@@ -19,11 +17,7 @@ export function OrdersGrid({ orders, loadCart }) {
               {order.products.map((orderProduct) => {
 
                 const addToCart = async () => {
-
-                  await axios.post('/api/cart-items/', {
-                    productId: orderProduct.productId,
-                    quantity: 1
-                  });
+                  await cartApi.add(orderProduct.productId, 1);
                   await loadCart();
                   console.log('loadCart();')
                 }

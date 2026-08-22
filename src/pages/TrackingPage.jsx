@@ -2,11 +2,12 @@ import { Header } from "../components/Header.jsx";
 import { Link, useParams } from "react-router";
 import "./tracking.css";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import dayjs from "dayjs";
 import duration from "dayjs/plugin/duration";
-dayjs.extend(duration)
 import "./TrackingPage.css"
+import { ordersApi } from "../services/api";
+
+dayjs.extend(duration)
 
 export function TrackingPage({ cart }) {
   const { orderId, productId } = useParams()
@@ -14,13 +15,8 @@ export function TrackingPage({ cart }) {
 
   useEffect(() => {
     async function fetchOrder() {
-      const response = await axios.get(
-        `/api/orders/${orderId}?expand=products`,
-
-      );
-
-      setOrder(response.data);
-
+      const data = await ordersApi.getById(orderId, true);
+      setOrder(data);
     }
     fetchOrder();
   }, [orderId]);
@@ -46,7 +42,6 @@ export function TrackingPage({ cart }) {
     const progress = Math.min(Math.max((timePassed / total) * 100, 0), 100);
     return progress
   }
-
 
 
   const progress = progressBar();
@@ -100,7 +95,6 @@ export function TrackingPage({ cart }) {
                 <div className="product-info">Quantity: {productData.quantity}</div>
 
                 <img className="product-image" src={`/ReactJs-Project/${productData.image}`} />
-
           <div className="progress-labels-container">
             <div className={`progress-label  ${isPreparing && 'current-status'}`}>Preparing</div>
             <div className={`progress-label ${isShipped && 'current-status'}`} >Shipped</div>

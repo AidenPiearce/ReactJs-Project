@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import "./CheckoutHeader.css";
 import "./CheckoutPage.css";
@@ -8,6 +7,7 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { OrderSummary } from "./OrderSummary";
 import { PaymentSummary } from "./PaymentSummary";
+import { deliveryOptionsApi, paymentSummaryApi } from "../../services/api";
 
 dayjs.extend(relativeTime);
 
@@ -17,18 +17,16 @@ export function CheckoutPage({ cart, loadCart }) {
 
   useEffect(() => {
     const fetchCheckoutData = async () => {
-      let response = await axios.get(
-        "/api/delivery-options?expand=estimatedDeliveryTime",
-      );
-      setDelivertyOptions(response.data);
+      const data = await deliveryOptionsApi.getAll();
+      setDelivertyOptions(data);
     };
     fetchCheckoutData();
   }, []);
 
   useEffect(() => {
     const fetchPaymentSummaryData = async () => {
-      let response = await axios.get("/api/payment-summary");
-      setPaymentSummary(response.data);
+      const data = await paymentSummaryApi.get();
+      setPaymentSummary(data);
     };
     fetchPaymentSummaryData();
   }, [cart])
@@ -36,7 +34,7 @@ export function CheckoutPage({ cart, loadCart }) {
   return (
     <>
       <title>Checkout</title>
-      <link rel="icon" type="image/svg+xml" href="/Local/cart-favicon.png" />
+      <link rel="icon" type="image/svg+xml" href="/ReactJs-Project/Local/cart-favicon.png" />
       <CheckoutHeader paymentSummary={paymentSummary} />
       <div className="checkout-page">
         <div className="page-title">Review your order</div>
