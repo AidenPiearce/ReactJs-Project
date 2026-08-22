@@ -118,7 +118,7 @@ The `gh-pages` branch contains the production build.
 npm run build
 cd dist
 git init
-git remote add origin https://github.com/SpotifyAsoma/ReactJs-Project.git
+git remote add origin https://github.com/AidenPiearce/ReactJs-Project.git
 git add .
 git commit -m "Deploy"
 git branch -M gh-pages

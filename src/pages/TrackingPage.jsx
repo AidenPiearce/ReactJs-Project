@@ -83,23 +83,23 @@ export function TrackingPage({ cart }) {
   return (
     <>
       <title>Tracking</title>
-      <link rel="icon" type="image/svg+xml" href="/Local/orders-favicon.png" />
+            <link rel="icon" type="image/svg+xml" href="/ReactJs-Project/Local/orders-favicon.png" />
 
-      <Header cart={cart} />
-      <div className="tracking-page">
-        <div className="order-tracking">
-          <Link className="back-to-orders-link link-primary" to="/orders">
-            View all orders
-          </Link>
+            <Header cart={cart} />
+            <div className="tracking-page">
+              <div className="order-tracking">
+                <Link className="back-to-orders-link link-primary" to="/orders">
+                  View all orders
+                </Link>
 
 
-          <ArrivalText />
+                <ArrivalText />
 
-          <div className="product-info">{productData.name}</div>
+                <div className="product-info">{productData.name}</div>
 
-          <div className="product-info">Quantity: {productData.quantity}</div>
+                <div className="product-info">Quantity: {productData.quantity}</div>
 
-          <img className="product-image" src={`/${productData.image}`} />
+                <img className="product-image" src={`/ReactJs-Project/${productData.image}`} />
 
           <div className="progress-labels-container">
             <div className={`progress-label  ${isPreparing && 'current-status'}`}>Preparing</div>

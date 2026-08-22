@@ -43,10 +43,10 @@ export function Product({ product, loadCart }) {
 
       <div className="product-rating-container">
         <img
-          data-testid="rating-image"
-          className="product-rating-stars"
-          src={`/images/ratings/rating-${product.rating.stars * 10}.png`}
-        />
+                  data-testid="rating-image"
+                  className="product-rating-stars"
+                  src={`/ReactJs-Project/images/ratings/rating-${product.rating.stars * 10}.png`}
+                />
         <div className="product-rating-count link-primary">
           {product.rating.count}
         </div>
@@ -75,17 +75,17 @@ export function Product({ product, loadCart }) {
       <div className="product-spacer"></div>
 
       <div className="added-to-cart"
-        style={{
-          opacity: addedToCart ? 1 : 0,
-          transform: addedToCart ? 'scale(1)' : 'scale(0.8)',
-          transition: 'opacity 0.15s ease, transform 0.15s ease',
-        }}
-      >
-        <img src="/images/icons/checkmark.png"
+              style={{
+                opacity: addedToCart ? 1 : 0,
+                transform: addedToCart ? 'scale(1)' : 'scale(0.8)',
+                transition: 'opacity 0.15s ease, transform 0.15s ease',
+              }}
+            >
+              <img src="/ReactJs-Project/images/icons/checkmark.png"
 
-        />
-        Added
-      </div>
+              />
+              Added
+            </div>
 
       <button className="add-to-cart-button button-primary"
         onClick={addToCart}

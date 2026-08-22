@@ -31,8 +31,8 @@ export function OrdersGrid({ orders, loadCart }) {
                 return (
                   <Fragment key={orderProduct.productId}>
                     <div className="product-image-container">
-                      <img src={`/${orderProduct.product.image}`} />
-                    </div>
+                                          <img src={`/ReactJs-Project/${orderProduct.product.image}`} />
+                                        </div>
 
                     <div className="product-details">
                       <div className="product-name">{orderProduct.name}</div>
@@ -46,14 +46,14 @@ export function OrdersGrid({ orders, loadCart }) {
                         Quantity: {orderProduct.quantity}
                       </div>
                       <button className="buy-again-button button-primary">
-                        <img
-                          className="buy-again-icon"
-                          src="/images/icons/buy-again.png"
-                        />
-                        <span className="buy-again-message"
-                          onClick={addToCart}
-                        >Add to Cart</span>
-                      </button>
+                                              <img
+                                                className="buy-again-icon"
+                                                src="/ReactJs-Project/images/icons/buy-again.png"
+                                              />
+                                              <span className="buy-again-message"
+                                                onClick={addToCart}
+                                              >Add to Cart</span>
+                                            </button>
                     </div>
 
                     <div className="product-actions">

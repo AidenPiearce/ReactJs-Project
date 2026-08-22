@@ -7,11 +7,15 @@ export default defineConfig({
   base: '/ReactJs-Project/',
   server:{
     proxy:{
-      '/api':{
-        target: 'http://localhost:3000'
+      '/ReactJs-Project/api':{
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/ReactJs-Project/, '')
       },
-      '/images':{
-        target: 'http://localhost:3000'
+      '/ReactJs-Project/images':{
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/ReactJs-Project/, '')
       }
     }
   }

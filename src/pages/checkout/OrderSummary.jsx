@@ -34,7 +34,7 @@ export function OrderSummary({ deliveryOptions, cart, loadCart }) {
               </div>
 
               <div className="cart-item-details-grid">
-                <img className="product-image" src={`/${cartItem.product.image}`} />
+                <img className="product-image" src={`/ReactJs-Project/${cartItem.product.image}`} />
 
                 <div className="cart-item-details">
                   <div className="product-name">{cartItem.product.name}</div>
